@@ -46,7 +46,7 @@ class Fern extends JFrame {
 
         colorButton.setPreferredSize(new Dimension(30, 30));
         pointSize = new JSlider(1, 3, 1);
-        speedThread = new JSlider(1, 50, 1);
+        speedThread = new JSlider(-50, -1, -50);
 
         JButton startButton = new JButton("Start");
         startButton.addActionListener(e -> {
@@ -78,7 +78,7 @@ class Fern extends JFrame {
         topPanel.add(stopButton);
         topPanel.add(pauseButton);
         topPanel.add(continueButton);
-        topPanel.add(new JLabel("Number of points"));
+        topPanel.add(new JLabel("Number of points:"));
         topPanel.add(jCounter);
         add(pane);
         add(topPanel, BorderLayout.NORTH);
@@ -206,7 +206,7 @@ class Fern extends JFrame {
                             Fern.pointSize.getValue(), Fern.pointColor);
                     points.add(point);
                     pane.repaint();
-                    Thread.sleep(Fern.speedThread.getValue());
+                    Thread.sleep(Fern.speedThread.getValue() * (-1));
                 }
             } catch (InterruptedException ex) {
                 ex.printStackTrace();
