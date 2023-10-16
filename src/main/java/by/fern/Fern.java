@@ -29,7 +29,7 @@ class Fern extends JFrame {
     Fern() {
         setTitle("Barnsley Fern");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setPreferredSize(new Dimension(1200, 800));
+        setPreferredSize(new Dimension(900, 800));
 
         points = new CopyOnWriteArrayList<>();
         pointColor = Color.GREEN;
@@ -46,7 +46,9 @@ class Fern extends JFrame {
 
         colorButton.setPreferredSize(new Dimension(30, 30));
         pointSize = new JSlider(1, 3, 1);
+        pointSize.setPreferredSize(new Dimension(80, 30));
         speedThread = new JSlider(-50, -1, -50);
+        speedThread.setPreferredSize(new Dimension(80, 30));
 
         JButton startButton = new JButton("Start");
         startButton.addActionListener(e -> {
@@ -92,7 +94,7 @@ class Fern extends JFrame {
     static class DrawingPane extends JPanel {
         public DrawingPane() {
             setBorder(new LineBorder(Color.GRAY));
-            setBackground(Color.BLACK);
+            setBackground(new Color(22,27,34));
         }
 
         @Override
@@ -202,7 +204,7 @@ class Fern extends JFrame {
                     x = nextX;
                     y = nextY;
 
-                    ColorPoint point = new Fern.ColorPoint((int) ((x + 4) * 700 / 5), (int) (700 - y * 700 / 11),
+                    ColorPoint point = new Fern.ColorPoint((int) ((x + 3) * 700 / 5), (int) (700 - y * 700 / 11),
                             Fern.pointSize.getValue(), Fern.pointColor);
                     points.add(point);
                     pane.repaint();
