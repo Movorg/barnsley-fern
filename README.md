@@ -14,7 +14,6 @@ Visualization of the construction of the fractal "Barnsley Fern" in Java.
 
 # What is Barnsley Fern?
 
-
 The **Barnsley Fern** is a fascinating and visually striking fractal pattern that was discovered by British mathematician and computer scientist Michael Barnsley in 1988. This fractal is renowned for its intricate, fern-like appearance and is a prominent example of an iterated function system (IFS) fractal.
 
 # Mathematical Foundations
